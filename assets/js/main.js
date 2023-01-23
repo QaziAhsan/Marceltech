@@ -583,3 +583,5 @@ $(document)
 $(document).mousemove(function () {
   gsap.to("#magic-cursor", { duration: 0.3, autoAlpha: 1 });
 });
+
+

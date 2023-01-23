@@ -128,6 +128,10 @@ body.tt-transition .ptr-prel-content {
   z-index: 1;
   justify-content: space-between;
   border-bottom: 1px solid #eeeeee3b;
+  padding: 15px;
+}
+.navbar-brand {
+  /* padding: 10px; */
 }
 .navbar-collapse {
   flex-grow: unset;
@@ -141,6 +145,34 @@ body.tt-transition .ptr-prel-content {
 .navbar-toggler {
   border: 1px solid white;
 }
+.navbar-nav .nav-item {
+  margin: 0 10px;
+  position: relative;
+}
+.navbar-nav .nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+}
+.navbar-nav .nav-item.active::after {
+  opacity: 1;
+  visibility: visible;
+}
+.lets_talk {
+  display: flex;
+  align-items: center;
+}
+
+.lets_talk img {
+  margin-left: 10px;
+}
+
 /**********Custom Cursor**********/
 
 .cursorNew {
