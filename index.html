@@ -11,8 +11,11 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
@@ -158,14 +161,14 @@
           </section>
 
           <section class="slide-content py-5">
-            <marquee behavior="alternate" direction="">
+            <marquee behavior="alternate" direction="left">
               <h2>
                 Every project made by marceltech is created at the intersection
                 between design and technology, making the future — today
               </h2>
             </marquee>
           </section>
-          <section class="expertise">
+          <section class="expertise mb-5">
             <div class="expertise-vertical">
               <img src="assets/img/expertise-vertical.png" alt="" />
             </div>
@@ -241,24 +244,186 @@
               </div>
             </div>
           </section>
-          <section class="clients"></section>
+          <section
+            class="tt-portfolio-slider cursor-drag-mouse-down"
+            data-speed="1000"
+            data-mousewheel="true"
+            data-keyboard="true"
+            data-simulate-touch="true"
+            data-grab-cursor="true"
+            data-pagination-type="fraction"
+            data-parallax-mouse-move="true"
+          >
+            <!-- Slider main container -->
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <!-- Begin swiper slide 
+									======================== 
+									* Change data attributes (data-url="...", data-title="...", data-category="...") according to your needs.
+									* Use class "psi-image-is-light" if needed, it makes the elements dark and more visible if you use a very light image.
+									-->
+                <div
+                  class="swiper-slide"
+                  data-url="single-project-1.html"
+                  data-title="Advanced Energy Solution"
+                  data-category="Branding/ Digital / Campagne"
+                >
+                  <!-- Use class "cover-opacity-*" to set an image overlay if needed. For example "cover-opacity-2". Note: It is individual and depends on the image you use. More info about helper classes in file "helper.css". -->
+                  <div
+                    class="tt-portfolio-slider-item cover-opacity-3"
+                    data-swiper-parallax="50%"
+                  >
+                    <img
+                      class="tt-psi-image swiper-lazy"
+                      src="assets/img/portfolio/item1.jpg"
+                      data-src="assets/img/portfolio/item1.jpg"
+                      alt="Image"
+                    />
+                  </div>
+                  <!-- /.tt-portfolio-slider-item -->
+                </div>
+                <!-- End swiper slide -->
+                <!-- Begin swiper slide 
+									======================== 
+									* Change data attributes (data-url="...", data-title="...", data-category="...") according to your needs.
+									* Use class "psi-image-is-light" if needed, it makes the elements dark and more visible if you use a very light image.
+									-->
+                <div
+                  class="swiper-slide"
+                  data-url="single-project-1.html"
+                  data-title="Victorian Girls"
+                  data-category="People"
+                >
+                  <!-- Use class "cover-opacity-*" to set an image overlay if needed. For example "cover-opacity-2". Note: It is individual and depends on the image you use. More info about helper classes in file "helper.css". -->
+                  <div
+                    class="tt-portfolio-slider-item cover-opacity-3"
+                    data-swiper-parallax="50%"
+                  >
+                    <img
+                      class="tt-psi-image swiper-lazy"
+                      src="assets/img/portfolio/item2.jpg"
+                      data-src="assets/img/portfolio/item2.jpg"
+                      alt="Image"
+                    />
+                  </div>
+                  <!-- /.tt-portfolio-slider-item -->
+                </div>
+                <!-- End swiper slide -->
+                <!-- Begin swiper slide 
+									======================== 
+									* Change data attributes (data-url="...", data-title="...", data-category="...") according to your needs.
+									* Use class "psi-image-is-light" if needed, it makes the elements dark and more visible if you use a very light image.
+									-->
+                <div
+                  class="swiper-slide"
+                  data-url="single-project-1.html"
+                  data-title="Victorian Girls"
+                  data-category="People"
+                >
+                  <!-- Use class "cover-opacity-*" to set an image overlay if needed. For example "cover-opacity-2". Note: It is individual and depends on the image you use. More info about helper classes in file "helper.css". -->
+                  <div
+                    class="tt-portfolio-slider-item cover-opacity-3"
+                    data-swiper-parallax="50%"
+                  >
+                    <img
+                      class="tt-psi-image swiper-lazy"
+                      src="assets/img/portfolio/item1.jpg"
+                      data-src="assets/img/portfolio/item1.jpg"
+                      alt="Image"
+                    />
+                  </div>
+                  <!-- /.tt-portfolio-slider-item -->
+                </div>
+                <!-- End swiper slide -->
+              </div>
+              <!-- If we need pagination -->
+            </div>
+            <!-- Begin portfolio slider caption
+							==================================== 
+							* Use class "psc-center" to align caption.
+							* Use class "psc-stroke" to enable caption title stroke style.
+							* Note: Titles and URLs are loaded from "swiper-slide" data attributes. Do not change them here!!!
+							-->
+                <div class="tt-portfolio-slider-caption psc-center">
+              <div class="container">
+
+                  <div class="tt-ps-caption-inner">
+                    <h2 class="tt-psc-elem tt-ps-caption-title">
+                      <a href="#" data-cursor="View<br>Project"></a>
+                    </h2>
+                    <div class="tt-psc-elem tt-ps-caption-category"></div>
+                  </div>
+                </div>
+                  <!-- /.tt-ps-caption-inner -->
+                </div>
+
+                <div class="tt-portfolio-slider-navigation tt-swiper-nav">
+                  <div class="tt-ps-nav-prev">
+                    <div
+                      class="tt-ps-nav-arrow tt-ps-nav-arrow-prev magnetic-item"
+                    ></div>
+                  </div>
+                  <div class="tt-ps-nav-next">
+                    <div
+                      class="tt-ps-nav-arrow tt-ps-nav-arrow-next magnetic-item"
+                    ></div>
+                  </div>
+                  <div class="tt-ps-nav-pagination"></div>
+                </div>
+          
+            <!-- End portfolio slider caption -->
+
+            <!-- Begin portfolio slider navigation 
+							======================================= -->
+         
+            <!-- End portfolio slider navigation -->
+          </section>
+          <section class="slide-content py-5">
+            <marquee direction="left">
+              <h2>Radio Nova. Jean Dousset. Chole. Leica</h2>
+            </marquee>
+          </section>
           <section class="testimonials">
             <div class="container">
-              <div class="row"></div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="swiper testimonial-swipper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">Slide 1</div>
+                      <div class="swiper-slide">Slide 2</div>
+                      <div class="swiper-slide">Slide 3</div>
+                      <div class="swiper-slide">Slide 4</div>
+                      <div class="swiper-slide">Slide 5</div>
+                      <div class="swiper-slide">Slide 6</div>
+                      <div class="swiper-slide">Slide 7</div>
+                      <div class="swiper-slide">Slide 8</div>
+                      <div class="swiper-slide">Slide 9</div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
         </div>
       </div>
     </main>
   </body>
+
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+
+  <!-- GSAP -->
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-  <script src="assets/js/smooth-scrollbar.js"></script>
 
-  <script src="assets/js/owl.carousel.js"></script>
+  <script src="assets/js/swiper-bundle.min.js"></script>
+
   <script src="assets/js/main.js"></script>
 </html>

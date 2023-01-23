@@ -26,6 +26,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: none;
 }
 h1,
 h2,
@@ -480,4 +481,348 @@ body.tt-transition .ptr-prel-content {
   color: #fff;
   line-height: 1;
   text-align: center;
+}
+
+/* ------------------------------------------------------------- *
+ * Portfolio slider (full screen)
+/* ------------------------------------------------------------- */
+
+.tt-portfolio-slider {
+	position: relative;
+	width: 100%;
+	background-color: #0a0a0a;
+}
+
+.tt-portfolio-slider .swiper {
+	height: 100vh;
+}
+@media (max-width: 1024px) {
+	.tt-portfolio-slider .swiper {
+		height: calc(100vh - 50px);
+	}
+}
+
+/* Portfolio slider slide */
+.tt-portfolio-slider .swiper-slide {
+	position: relative;
+	overflow: hidden;
+	background-color: #000;
+}
+
+
+/* Portfolio slider item 
+========================= */
+.tt-portfolio-slider-item {
+	position: relative;
+	height: 100%;
+}
+
+img.tt-psi-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 50% 50%;
+}
+
+/* Slide opasity cover (for prev/next slides) */
+.tt-portfolio-slider-item::after {
+	position: absolute;
+	display: block;
+	content: "";
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9;
+	opacity: 0;
+	visibility: hidden;
+	background-color: #000;
+	transition: 0.5s ease-in-out;
+}
+.swiper-slide-prev .tt-portfolio-slider-item::after,
+.swiper-slide-next .tt-portfolio-slider-item::after {
+	opacity: .7;
+	visibility: visible;
+}
+
+
+/* Portfolio slider caption 
+============================ */
+.tt-portfolio-slider-caption {
+	position: absolute;
+	top: 55%;
+	left: 0;
+	width: auto;
+	/*max-width: 1000px;*/
+	margin: 0px 2% 0 12%;
+	color: #FFF;
+	z-index: 998;
+	pointer-events: none;
+	transform: translate3d(0, -50%, 0);
+}
+@media (max-width: 767px) {
+	.tt-portfolio-slider-caption {
+		margin-left: 10%;
+	}
+}
+.tt-ps-caption-inner {
+}
+
+.tt-portfolio-slider-caption a {
+	pointer-events: initial;
+}
+
+/* Portfolio slider caption title */
+.tt-ps-caption-title {
+	margin: 0;
+	font-size: clamp(40px, 4.8vw, 100px);
+	font-weight: bold;
+	font-weight: 600;
+	line-height: 1.2;
+}
+.tt-ps-caption-title a {
+	display: inline;
+	color: #FFF;
+}
+
+/* Portfolio slider caption title hover if the magic cursor is not enabled */
+body:not(.tt-magic-cursor) .tt-ps-caption-title a {
+	background-repeat: no-repeat;
+	background-image: -o-linear-gradient(transparent calc(100% - 3px),currentColor 3px);
+	background-image: linear-gradient(transparent calc(100% - 3px),currentColor 3px);
+	background-image: -ms-linear-gradient(transparent 96%,currentColor 3px);
+	transition: 0.6s cubic-bezier(.215,.61,.355,1);
+	background-size: 0 96%;
+}
+body:not(.tt-magic-cursor) .tt-ps-caption-title a:hover {
+	background-size: 100% 96%;
+	color: currentColor;
+}
+
+/* Portfolio slider caption category */
+.tt-ps-caption-category {
+	margin: 30px 0 0 0;
+	font-size: calc(13px + 0.1vw);
+	font-weight: 500;
+}
+@media (max-width: 1024px) {
+	.tt-ps-caption-category {
+		margin: 30px 0 0 0;
+	}
+}
+
+
+/* Portfolio slider caption position 
+===================================== */
+/* Position center */
+.tt-portfolio-slider-caption.psc-center {
+	top: 50%;
+	left: 50%;
+	width: 90%;
+	margin: 0;
+	padding-left: 15px;
+	padding-right: 15px;
+	text-align: center;
+	transform: translate(-50%, -50%);
+}
+.tt-ps-caption-inner {
+  text-align: left;
+  width: 50%;
+}
+
+/* Portfolio slider caption styles 
+=================================== */
+/* Style stroke */
+.tt-portfolio-slider-caption.psc-stroke .tt-ps-caption-title {
+	font-weight: bold;
+	font-weight: 800;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: #FFF;
+	-webkit-text-fill-color: transparent;
+}
+@media (max-width: 1200px) {
+	.tt-portfolio-slider-caption.psc-stroke .tt-ps-caption-title {
+		-webkit-text-stroke-width: 1px;	
+	}
+}
+@media (max-width: 991px) {
+	.tt-portfolio-slider-caption.psc-stroke .tt-ps-caption-title {
+		-webkit-text-stroke-width: 1px;	
+	}
+}
+
+
+/* Portfolio slider navigation 
+=============================== */
+.tt-portfolio-slider-navigation {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 2%;
+  left: 50%;
+  width: 300px;
+  height: 60px;
+  z-index: 1;
+  transform: translate3d(-50%, 0, 0);
+}
+@media (max-width: 767px) {
+	.tt-portfolio-slider-navigation {
+		width: 90%;
+	}
+}
+
+.tt-ps-nav-prev,
+.tt-ps-nav-next {
+	position: absolute;
+	top: 0;
+	z-index: 20;
+}
+.tt-ps-nav-prev {
+	left: 0;
+}
+.tt-ps-nav-next {
+	right: 0;
+}
+
+.tt-ps-nav-arrow {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 60px;
+	height: 60px;
+	font-size: 18px;
+	color: #FFF;
+	cursor: pointer;
+	outline: none;
+}
+body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
+	opacity: .5;
+}
+.tt-ps-nav-arrow-prev::after,
+.tt-ps-nav-arrow-next::after {
+	line-height: 0;
+
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+}
+.tt-ps-nav-arrow-prev::after {
+	content: "\f053";
+}
+.tt-ps-nav-arrow-next::after {
+	content: "\f054";
+}
+
+.tt-ps-nav-arrow.tt-ps-nav-arrow-disabled {
+	/* opacity: .5; */
+	cursor: auto;
+	pointer-events: none;
+}
+
+.tt-portfolio-slider .swiper-button-lock {
+	display: none;
+}
+
+
+/* Portfolio slider pagination 
+=============================== */
+.tt-ps-nav-pagination {
+}
+
+.tt-portfolio-slider .swiper-pagination-lock {
+	display: none;
+}
+
+/* Portfolio slider pagination bullets */
+.tt-ps-nav-pagination-bullets {
+	font-size: 0;
+}
+.tt-ps-nav-pagination-bullets .swiper-pagination-bullet {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background-color: transparent;
+	margin: 8px;
+	opacity: 1;
+	border-radius: 100%;
+	border: 2px solid #fff;
+}
+.tt-ps-nav-pagination-bullets .swiper-pagination-bullet-active {
+	background: #FFF;
+	opacity: 1;
+}
+
+/* Portfolio slider pagination dynamic bullets */
+.tt-ps-nav-pagination-bullets-dynamic {
+	position: absolute;
+	left: 50%;
+	transform: translate3d(-50%, 0, 0);
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 0;
+}
+.tt-ps-nav-pagination-bullets-dynamic .swiper-pagination-bullet {
+	transform: scale(.33);
+	position: relative;
+	transition: .2s transform, .2s left;
+}
+.tt-ps-nav-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev {
+	transform: scale(.66);
+}
+.tt-ps-nav-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev {
+	transform: scale(.33);
+}
+.tt-ps-nav-pagination-bullets-dynamic .swiper-pagination-bullet-active-next {
+	transform: scale(.66);
+}
+.tt-ps-nav-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next {
+	transform: scale(.33);
+}
+.tt-ps-nav-pagination-bullets-dynamic .swiper-pagination-bullet-active-main {
+	transform: scale(1);
+}
+
+/* Portfolio slider pagination fraction */
+.tt-ps-nav-pagination-fraction {
+	position: relative;
+	font-size: 14px;
+	font-weight: 600;
+	color: #FFF;
+	line-height: 1;
+}
+
+.tt-ps-nav-pagination-fraction .swiper-pagination-current {
+	position: relative;
+	top: -4px;
+}
+.tt-ps-nav-pagination-fraction .swiper-pagination-total {
+	position: relative;
+	bottom: -4px;
+}
+
+/* Portfolio slider pagination progressbar */
+.tt-ps-nav-pagination-progressbar {
+	position: absolute;
+	left: 70px;
+	right: 70px;
+	width: auto;
+	max-width: 100%;
+	height: 2px;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+.tt-ps-nav-pagination-progressbar .swiper-pagination-progressbar-fill {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #FFF;
+	transform: scale(0);
+	transform-origin: left top;
 }
