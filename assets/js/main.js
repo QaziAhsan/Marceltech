@@ -448,39 +448,34 @@ $(".anim-stretchinup").each(function () {
   );
 });
 
-// zoom in
-// $(".anim-zoomin").each(function () {
-//   // Add wrap <div>.
-//   $(this).wrap('<div class="anim-zoomin-wrap"></div>');
 
-//   // Add overflow hidden.
-//   $(".anim-zoomin-wrap").css({ overflow: "hidden" });
+	// zoom in
+	$(".anim-zoomin").each(function() {
 
-//   var $this = $(this);
-//   var $asiWrap = $this.parents(".anim-zoomin-wrap");
+		// Add wrap <div>.
+		$(this).wrap('<div class="anim-zoomin-wrap"></div>');
 
-//   let tl_ZoomIn = gsap.timeline({
-//     scrollTrigger: {
-//       trigger: $asiWrap,
-//       start: "top 90%",
-//       markers: false,
-//       onEnter: () => animZoomInRefresh(),
-//     },
-//   });
-//   tl_ZoomIn.from($this, {
-//     duration: 1.5,
-//     autoAlpha: 0,
-//     scale: 1.2,
-//     ease: Power2.easeOut,
-//     clearProps: "all",
-//   });
+		// Add overflow hidden.
+		$(".anim-zoomin-wrap").css({ "overflow": "hidden" })
 
-//   // Refresh start/end positions on enter.
-//   function animZoomInRefresh() {
-//     ScrollTrigger.refresh();
-//   }
-// });
+		var $this = $(this);
+		var $asiWrap = $this.parents(".anim-zoomin-wrap");
 
+		let tl_ZoomIn = gsap.timeline({
+			scrollTrigger: {
+				trigger: $asiWrap,
+				start: "top 90%",
+				markers: false,
+				onEnter: () => animZoomInRefresh(),
+			}
+		});
+		tl_ZoomIn.from($this, { duration: 1.5, autoAlpha: 0, scale: 1.2, ease: Power2.easeOut, clearProps:"all" });
+
+		// Refresh start/end positions on enter.
+		function animZoomInRefresh() {
+			ScrollTrigger.refresh();
+		};
+	});
 // Page header elements scrolling effects:
 
 let tlPhParallax = gsap.timeline({

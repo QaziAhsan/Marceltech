@@ -71,7 +71,7 @@
                 </div>
               </div>
               <div>
-                <button class="btn btn-transparent lets_talk">
+                <button class="btn btn-transparent lets_talk_btn">
                   Lets talk <img src="assets/img/hamburger.png" alt="" />
                 </button>
               </div>
@@ -245,7 +245,7 @@
             </div>
           </section>
           <section
-            class="tt-portfolio-slider cursor-drag-mouse-down"
+            class="tt-portfolio-slider cursor-drag-mouse-down anim-zoomin"
             data-speed="1000"
             data-mousewheel="true"
             data-keyboard="true"
@@ -346,38 +346,37 @@
 							* Use class "psc-stroke" to enable caption title stroke style.
 							* Note: Titles and URLs are loaded from "swiper-slide" data attributes. Do not change them here!!!
 							-->
-                <div class="tt-portfolio-slider-caption psc-center">
+            <div class="tt-portfolio-slider-caption psc-center">
               <div class="container">
+                <div class="tt-ps-caption-inner">
+                  <h2 class="tt-psc-elem tt-ps-caption-title">
+                    <a href="#" data-cursor="View<br>Project"></a>
+                  </h2>
+                  <div class="tt-psc-elem tt-ps-caption-category"></div>
+                </div>
+              </div>
+              <!-- /.tt-ps-caption-inner -->
+            </div>
 
-                  <div class="tt-ps-caption-inner">
-                    <h2 class="tt-psc-elem tt-ps-caption-title">
-                      <a href="#" data-cursor="View<br>Project"></a>
-                    </h2>
-                    <div class="tt-psc-elem tt-ps-caption-category"></div>
-                  </div>
-                </div>
-                  <!-- /.tt-ps-caption-inner -->
-                </div>
+            <div class="tt-portfolio-slider-navigation tt-swiper-nav">
+              <div class="tt-ps-nav-prev">
+                <div
+                  class="tt-ps-nav-arrow tt-ps-nav-arrow-prev magnetic-item"
+                ></div>
+              </div>
+              <div class="tt-ps-nav-next">
+                <div
+                  class="tt-ps-nav-arrow tt-ps-nav-arrow-next magnetic-item"
+                ></div>
+              </div>
+              <div class="tt-ps-nav-pagination"></div>
+            </div>
 
-                <div class="tt-portfolio-slider-navigation tt-swiper-nav">
-                  <div class="tt-ps-nav-prev">
-                    <div
-                      class="tt-ps-nav-arrow tt-ps-nav-arrow-prev magnetic-item"
-                    ></div>
-                  </div>
-                  <div class="tt-ps-nav-next">
-                    <div
-                      class="tt-ps-nav-arrow tt-ps-nav-arrow-next magnetic-item"
-                    ></div>
-                  </div>
-                  <div class="tt-ps-nav-pagination"></div>
-                </div>
-          
             <!-- End portfolio slider caption -->
 
             <!-- Begin portfolio slider navigation 
 							======================================= -->
-         
+
             <!-- End portfolio slider navigation -->
           </section>
           <section class="slide-content py-5">
@@ -385,29 +384,181 @@
               <h2>Radio Nova. Jean Dousset. Chole. Leica</h2>
             </marquee>
           </section>
-          <section class="testimonials">
+          <section class="testimonials anim-stretchinup">
             <div class="container">
               <div class="row">
                 <div class="col-12">
+                  <h3 class="title-secondary mb-5">Some thoughts</h3>
                   <div class="swiper testimonial-swipper">
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide">Slide 1</div>
-                      <div class="swiper-slide">Slide 2</div>
-                      <div class="swiper-slide">Slide 3</div>
-                      <div class="swiper-slide">Slide 4</div>
-                      <div class="swiper-slide">Slide 5</div>
-                      <div class="swiper-slide">Slide 6</div>
-                      <div class="swiper-slide">Slide 7</div>
-                      <div class="swiper-slide">Slide 8</div>
-                      <div class="swiper-slide">Slide 9</div>
+                      <div class="swiper-slide">
+                        <div class="testimonial-item">
+                          <p class="t-description">
+                            “The most impressive thing about marceltech.com team
+                            is their ability to find solutions to our issues and
+                            willingness to take on any challenge. We're
+                            satisfied with the work that Marceltech.com has done
+                            for us on both the development and testing sides on
+                            our platform.”
+                          </p>
+                          <div class="t-client">
+                            <img src="assets/img/client.jpg" alt="" />
+                            <div class="client-description">
+                              <h5 class="c-title">Mark David</h5>
+                              <p class="p-sub-title">
+                                CEO, Advanced Energy Solutions
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="testimonial-item">
+                          <p class="t-description">
+                            “The most impressive thing about marceltech.com team
+                            is their ability to find solutions to our issues and
+                            willingness to take on any challenge. We're
+                            satisfied with the work that Marceltech.com has done
+                            for us on both the development and testing sides on
+                            our platform.”
+                          </p>
+                          <div class="t-client">
+                            <img src="assets/img/client.jpg" alt="" />
+                            <div class="client-description">
+                              <h5 class="c-title">Mark David</h5>
+                              <p class="p-sub-title">
+                                CEO, Advanced Energy Solutions
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                    <div class="testimonial-nav">
+                      <div class="swiper-button-next">
+                        <img
+                          src="assets/img/arrow-right.png"
+                          alt="arrow-right"
+                        />
+                      </div>
+                      <div class="swiper-button-prev">
+                        <img
+                          src="assets/img/arrow-left.png"
+                          alt="arrow-right"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </section>
+          <section class="lets_talk">
+            <div class="container anim-stretchinup">
+              <a href="#" class="lt_link" data-cursor="View">Let’s talk</a>
+            </div>
+          </section>
+          <footer class="footer-main">
+            <div class="container">
+              <div class="footer-top">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <div class="footer-box footer-description">
+                      <h3>Pakistan</h3>
+                      <a
+                        href="https://goo.gl/maps/VHWPo7RD8r8eW5BLA"
+                        target="_blank"
+                      >
+                        <p>
+                          Office # 15, Hussain Shah Shaheed Road, Moyedi Manzil,
+                          Doli Khata, Karachi, Pakistan.
+                        </p>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-lg-1"></div>
+
+                  <div class="col-lg-4">
+                    <div class="footer-box">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="footer-quick-links">
+                            <ul>
+                              <li>
+                                <a href="#">Home</a>
+                              </li>
+                              <li>
+                                <a href="#">Expertise</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="footer-quick-links">
+                            <ul>
+                              <li>
+                                <a href="#">Case studies </a>
+                              </li>
+                              <li>
+                                <a href="#">Agency</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="footer-quick-links">
+                            <ul>
+                              <li>
+                                <a href="#">Industries</a>
+                              </li>
+                              <li>
+                                <a href="#">Contact</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-1"></div>
+
+                  <div class="col-lg-2">
+                    <div class="social-links footer-box">
+                      <ul>
+                        <li>
+                          <a href="#"
+                            ><i class="fa-brands fa-square-facebook"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                  <div class="copy-right">
+                    <p>MarcelTech © 2023. All Rights Reserved.</p>
+                  </div>
+                </div>
+                <div class="footer-bottom-right">
+                  <div class="footer-bottom-links">
+                    <a href="">Sitemap</a>
+                    <a href="">Terms & condition</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
         </div>
       </div>
     </main>
