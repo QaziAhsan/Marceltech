@@ -80,6 +80,24 @@ p {
   border-bottom: 1px solid rgba(255, 255, 255, 0.525);
   padding-bottom: 25px;
 }
+/* ------------------------------------------------------------- *
+ * Content wrap
+/* ------------------------------------------------------------- */
+
+#content-wrap {
+  position: relative;
+  overflow: hidden;
+}
+/* Transition overlay */
+
+#page-transition {
+  display: none;
+}
+body.tt-transition #page-transition {
+  position: relative;
+  display: block;
+  z-index: 99999;
+}
 
 /* Transition overlay */
 body.tt-transition .ptr-overlay {
@@ -90,6 +108,7 @@ body.tt-transition .ptr-overlay {
   width: 100%;
   height: 100vh;
   background-color: #111;
+  z-index: 1;
 }
 
 /* Transition preloader */
@@ -97,7 +116,7 @@ body.tt-transition .ptr-preloader {
   position: fixed;
   top: 50%;
   left: 50%;
-  z-index: 12;
+  z-index: 2;
   transform: translate(-50%, -50%);
 }
 
@@ -115,65 +134,209 @@ body.tt-transition .ptr-prel-content {
   opacity: 0.2; /* You may need to change the opacity as well! */
 }
 
-.btn-transparent {
-  background: transparent;
-  border: none;
-  color: white;
-}
 /**********Header Navbar**********/
 
-.navbar {
-  background: transparent;
+.header-main {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1;
-  justify-content: space-between;
-  border-bottom: 1px solid #eeeeee3b;
-  padding: 15px;
+  z-index: 100;
+  height: auto;
+  cursor: auto;
 }
-.navbar-brand {
-  /* padding: 10px; */
+.header-main.open {
+  height: 80vh;
 }
-.navbar-collapse {
-  flex-grow: unset;
-}
-.nav-item.nav-link {
-  color: white;
-}
-.nav-item.nav-link:hover {
-  color: #cf2526;
-}
-.navbar-toggler {
-  border: 1px solid white;
-}
-.navbar-nav .nav-item {
-  margin: 0 10px;
-  position: relative;
-}
-.navbar-nav .nav-item::after {
-  content: "";
-  position: absolute;
-  bottom: -15px;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: white;
-  opacity: 0;
-  visibility: hidden;
-}
-.navbar-nav .nav-item.active::after {
-  opacity: 1;
-  visibility: visible;
-}
-.lets_talk_btn {
+.header-top {
+  padding: 15px 25px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  position: relative;
+}
+.header-main .logo-brand {
+  display: block;
+  height: 20px;
+}
+.header-main .logo-brand img {
+  height: 100%;
+}
+.header-top {
+  padding: 15px;
+}
+.toggle_btn {
+  cursor: pointer;
+  z-index: 100;
+  transition: opacity 0.25s ease;
+}
+.toggle_btn {
+    position: relative;
+    z-index: 10;
+    width: 25px;
+    height: 20px;
+    margin-left: 10px;
+}
+.lt_btn{
+	background: transparent;
+	color: white;
+	font-weight: bold;
+}
+.lt_btn:hover{
+	color: var(--text-secondary);
+}
+.toggle_btn:hover {
+  opacity: 0.7;
+}
+.toggle_btn.active .top {
+  transform: translateY(11px) translateX(0) rotate(45deg);
+  background: #fff;
+}
+.toggle_btn.active .middle {
+  opacity: 0;
+  background: #fff;
+}
+.toggle_btn.active .bottom {
+  transform: translateY(0px) translateX(0) rotate(-45deg);
+  background: #fff;
+}
+.toggle_btn span {
+  background: white;
+  border: none;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+.toggle_btn span:nth-of-type(2) {
+  top: 11px;
+}
+.toggle_btn span:nth-of-type(3) {
+  top: 22px;
 }
 
-.lets_talk_btn img {
-  margin-left: 10px;
+.overlay {
+  position: absolute;
+  background: #100d0a;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+  overflow: hidden;
+}
+.overlay.open {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+.overlay.open li {
+  -webkit-animation: fadeInRight 0.5s ease forwards;
+  animation: fadeInRight 0.5s ease forwards;
+  -webkit-animation-delay: 0.35s;
+  animation-delay: 0.35s;
+}
+.overlay.open li:nth-of-type(2) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+.overlay.open li:nth-of-type(3) {
+  -webkit-animation-delay: 0.45s;
+  animation-delay: 0.45s;
+}
+.overlay.open li:nth-of-type(4) {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+.overlay nav {
+  padding: 10% 0;
+}
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+}
+.overlay ul li {
+  display: block;
+  position: relative;
+  opacity: 0;
+}
+.overlay ul li a {
+  display: inline-block;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  overflow: hidden;
+}
+.nav-items li a:hover:after,
+.nav-items li a:focus:after,
+.nav-items li a:active:after {
+  width: 100%;
+}
+.nav-items li a:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: #fff;
+  transition: 0.35s;
+}
+.overlay-menu .nav-title {
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+.nav-items a {
+  font-size: 35px;
+}
+.nav-box .nav-right-items li a {
+  font-size: 14px;
+  color: #ffffff85;
+  margin-bottom: 5px;
+}
+.nav-box .nav-right-items li a:hover {
+  color: var(--text-secondary);
+}
+.nav-box {
+  margin-bottom: 25px;
+}
+.ht-right{
+	display: flex;
+	align-items: center;
+}
+.lets_talk{
+
+}
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
 }
 
 /**********Custom Cursor**********/

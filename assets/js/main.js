@@ -850,3 +850,12 @@ var swiper = new Swiper(".testimonial-swipper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+
+/**************Header***********/
+
+$('#toggle').click(function() {
+  $(this).toggleClass('active');
+  $('#overlay').toggleClass('open');
+  $('.header-main').toggleClass('open');
+ });
