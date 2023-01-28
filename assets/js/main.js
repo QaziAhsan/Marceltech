@@ -1,48 +1,48 @@
-// CURSOR
-var cursorNew = $(".cursorNew"),
-  follower = $(".cursor-follower");
+// // CURSOR
+// var cursorNew = $(".cursorNew"),
+//   follower = $(".cursor-follower");
 
-var posX = 0,
-  posY = 0;
+// var posX = 0,
+//   posY = 0;
 
-var mouseX = 0,
-  mouseY = 0;
+// var mouseX = 0,
+//   mouseY = 0;
 
-TweenMax.to({}, 0.016, {
-  repeat: -1,
-  onRepeat: function () {
-    posX += (mouseX - posX) / 9;
-    posY += (mouseY - posY) / 9;
+// TweenMax.to({}, 0.016, {
+//   repeat: -1,
+//   onRepeat: function () {
+//     posX += (mouseX - posX) / 9;
+//     posY += (mouseY - posY) / 9;
 
-    TweenMax.set(follower, {
-      css: {
-        left: posX - 12,
-        top: posY - 12,
-      },
-    });
+//     TweenMax.set(follower, {
+//       css: {
+//         left: posX - 12,
+//         top: posY - 12,
+//       },
+//     });
 
-    TweenMax.set(cursorNew, {
-      css: {
-        left: mouseX,
-        top: mouseY,
-      },
-    });
-  },
-});
+//     TweenMax.set(cursorNew, {
+//       css: {
+//         left: mouseX,
+//         top: mouseY,
+//       },
+//     });
+//   },
+// });
 
-$(document).on("mousemove", function (e) {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
-// yellow circle
-$(".link").on("mouseenter", function () {
-  cursor.addClass("active");
-  follower.addClass("active");
-});
-$(".link").on("mouseleave", function () {
-  cursor.removeClass("active");
-  follower.removeClass("active");
-});
+// $(document).on("mousemove", function (e) {
+//   mouseX = e.clientX;
+//   mouseY = e.clientY;
+// });
+// // yellow circle
+// $(".link").on("mouseenter", function () {
+//   cursor.addClass("active");
+//   follower.addClass("active");
+// });
+// $(".link").on("mouseleave", function () {
+//   cursor.removeClass("active");
+//   follower.removeClass("active");
+// });
 
 /********* Reveal Img On Title Hover ******** */
 
@@ -423,6 +423,30 @@ $(".anim-skewinup").each(function () {
   );
 });
 
+
+$(".anim-skewinright").each(function () {
+  let tl_SkewinRight = gsap.timeline({
+    scrollTrigger: {
+      trigger: this,
+      start: "top bottom",
+      markers: false,
+    },
+  });
+
+  tl_SkewinRight.from(
+    this,
+    {
+      duration: 2,
+      skewX: 5,
+      transformOrigin: "left top",
+      autoAlpha: 0,
+      x: 100,
+      ease: Expo.easeOut,
+      clearProps: "all",
+    },
+    "+=0.3"
+  );
+});
 // stretch in-up
 $(".anim-stretchinup").each(function () {
   let tl_StretchInUp = gsap.timeline({
@@ -448,34 +472,38 @@ $(".anim-stretchinup").each(function () {
   );
 });
 
+// zoom in
+$(".anim-zoomin").each(function () {
+  // Add wrap <div>.
+  $(this).wrap('<div class="anim-zoomin-wrap"></div>');
 
-	// zoom in
-	$(".anim-zoomin").each(function() {
+  // Add overflow hidden.
+  $(".anim-zoomin-wrap").css({ overflow: "hidden" });
 
-		// Add wrap <div>.
-		$(this).wrap('<div class="anim-zoomin-wrap"></div>');
+  var $this = $(this);
+  var $asiWrap = $this.parents(".anim-zoomin-wrap");
 
-		// Add overflow hidden.
-		$(".anim-zoomin-wrap").css({ "overflow": "hidden" })
+  let tl_ZoomIn = gsap.timeline({
+    scrollTrigger: {
+      trigger: $asiWrap,
+      start: "top 90%",
+      markers: false,
+      onEnter: () => animZoomInRefresh(),
+    },
+  });
+  tl_ZoomIn.from($this, {
+    duration: 1.5,
+    autoAlpha: 0,
+    scale: 1.2,
+    ease: Power2.easeOut,
+    clearProps: "all",
+  });
 
-		var $this = $(this);
-		var $asiWrap = $this.parents(".anim-zoomin-wrap");
-
-		let tl_ZoomIn = gsap.timeline({
-			scrollTrigger: {
-				trigger: $asiWrap,
-				start: "top 90%",
-				markers: false,
-				onEnter: () => animZoomInRefresh(),
-			}
-		});
-		tl_ZoomIn.from($this, { duration: 1.5, autoAlpha: 0, scale: 1.2, ease: Power2.easeOut, clearProps:"all" });
-
-		// Refresh start/end positions on enter.
-		function animZoomInRefresh() {
-			ScrollTrigger.refresh();
-		};
-	});
+  // Refresh start/end positions on enter.
+  function animZoomInRefresh() {
+    ScrollTrigger.refresh();
+  }
+});
 // Page header elements scrolling effects:
 
 let tlPhParallax = gsap.timeline({
@@ -545,8 +573,8 @@ $("[data-cursor]").each(function () {
       gsap.to(ball, {
         duration: 0.3,
         yPercent: -75,
-        width: 95,
-        height: 95,
+        width: 65,
+        height: 65,
         opacity: 1,
         borderWidth: 0,
         backgroundColor: "#FFF",
@@ -585,6 +613,7 @@ $(
   .not(".cursor-alter") // omit from selection
   .not(".tt-main-menu-list > li > a") // omit from selection
   .not(".tt-main-menu-list > li > .tt-submenu-trigger > a") // omit from selection
+  .not(".overlay")
   .on("mouseenter", function () {
     gsap.to($ball, { duration: 0.3, scale: 0, opacity: 0 });
   })
@@ -609,18 +638,18 @@ $("a")
   });
 
 // Show/hide on document leave/enter.
-$(document)
-  .on("mouseleave", function () {
-    gsap.to("#magic-cursor", { duration: 0.3, autoAlpha: 0 });
-  })
-  .on("mouseenter", function () {
-    gsap.to("#magic-cursor", { duration: 0.3, autoAlpha: 1 });
-  });
+// $(document)
+//   .on("mouseleave", function () {
+//     gsap.to("#magic-cursor", { duration: 0.3, autoAlpha: 0 });
+//   })
+//   .on("mouseenter", function () {
+//     gsap.to("#magic-cursor", { duration: 0.3, autoAlpha: 1 });
+//   });
 
-// Show as the mouse moves.
-$(document).mousemove(function () {
-  gsap.to("#magic-cursor", { duration: 0.3, autoAlpha: 1 });
-});
+// // Show as the mouse moves.
+// $(document).mousemove(function () {
+//   gsap.to("#magic-cursor", { duration: 0.3, autoAlpha: 1 });
+// });
 
 // =======================================================================================
 // Portfolio slider (full screen slider)
@@ -840,8 +869,6 @@ if ($(".tt-portfolio-slider").length) {
         },
       }
     );
-
-   
   });
 }
 var swiper = new Swiper(".testimonial-swipper", {
@@ -851,11 +878,18 @@ var swiper = new Swiper(".testimonial-swipper", {
   },
 });
 
-
 /**************Header***********/
 
-$('#toggle').click(function() {
-  $(this).toggleClass('active');
-  $('#overlay').toggleClass('open');
-  $('.header-main').toggleClass('open');
- });
+$("#toggle").click(function () {
+  $(this).toggleClass("active");
+  $("#overlay").toggleClass("open");
+  $(".header-main").toggleClass("open");
+});
+
+$(".lt_btn").click(function () {
+  $(this).toggleClass("active");
+  $(".right-form-slide").toggleClass("active");
+});
+$(".rf-close-btn").click(function () {
+  $(".right-form-slide").removeClass("active");
+});
