@@ -182,6 +182,9 @@ body.tt-transition .ptr-prel-content {
   cursor: pointer;
   z-index: 100;
   transition: opacity 0.25s ease;
+  background: transparent;
+  border: none;
+  outline: none !important;
 }
 .toggle_btn {
   position: relative;
@@ -1320,9 +1323,14 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
   font-weight: 300;
   font-size: 94px;
 }
+.counter-box {
+  padding: 25px 0;
+  text-align: center;
+}
 .counter-box h3 {
   font-weight: 300;
   font-size: 94px;
+  font-family: "ArgentumSans";
 }
 .title-red {
   color: var(--text-secondary);
@@ -1353,4 +1361,66 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
   font-weight: 300;
   font-size: 54px;
   line-height: 1;
+}
+.services {
+  background: #181818;
+  padding: 50px 0;
+}
+.services .row {
+  margin: 100px 0;
+  align-items: center;
+}
+.service-img img {
+  width: 100%;
+}
+.service-content {
+  padding: 15px;
+}
+.service-content p {
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.serivce-title-main {
+  font-family: "ArgentumSans";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 64px;
+  margin: 10px 0 20px;
+  line-height: 1;
+}
+.service-btn {
+  margin-top: 15px;
+}
+
+.benefits {
+  padding: 100px 0 0;
+}
+.benefits-top {
+  margin-bottom: 50px;
+  border-bottom: 1px solid #ffffff61;
+  padding-bottom: 50px;
+}
+.benefits-top h2 {
+  font-family: "ArgentumSans";
+  font-weight: 300;
+  font-size: 64px;
+  line-height: 118%;
+}
+.benefits-bottom {
+  padding: 15px;
+  margin-bottom: 25px;
+}
+.benefits-bottom h3 {
+  font-family: "ArgentumSans";
+  font-weight: 500;
+  font-size: 32px;
+  margin-bottom: 15px;
+  text-decoration: underline;
+}
+.benefits-bottom p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(255, 255, 255, 0.66);
 }

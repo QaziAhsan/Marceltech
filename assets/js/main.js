@@ -1,101 +1,3 @@
-// // CURSOR
-// var cursorNew = $(".cursorNew"),
-//   follower = $(".cursor-follower");
-
-// var posX = 0,
-//   posY = 0;
-
-// var mouseX = 0,
-//   mouseY = 0;
-
-// TweenMax.to({}, 0.016, {
-//   repeat: -1,
-//   onRepeat: function () {
-//     posX += (mouseX - posX) / 9;
-//     posY += (mouseY - posY) / 9;
-
-//     TweenMax.set(follower, {
-//       css: {
-//         left: posX - 12,
-//         top: posY - 12,
-//       },
-//     });
-
-//     TweenMax.set(cursorNew, {
-//       css: {
-//         left: mouseX,
-//         top: mouseY,
-//       },
-//     });
-//   },
-// });
-
-// $(document).on("mousemove", function (e) {
-//   mouseX = e.clientX;
-//   mouseY = e.clientY;
-// });
-// // yellow circle
-// $(".link").on("mouseenter", function () {
-//   cursor.addClass("active");
-//   follower.addClass("active");
-// });
-// $(".link").on("mouseleave", function () {
-//   cursor.removeClass("active");
-//   follower.removeClass("active");
-// });
-
-/********* Reveal Img On Title Hover ******** */
-
-const cursor = document.querySelector(".cursor");
-const cursorMedias = document.querySelectorAll(".cursor__media");
-const navLinks = document.querySelectorAll(".hover_item");
-
-gsap.set(cursor, {
-  xPercent: -50,
-  yPercent: -50,
-  scale: 0,
-});
-
-const setCursorX = gsap.quickTo(cursor, "x", {
-  duration: 0.6,
-  ease: "expo",
-});
-
-const setCursorY = gsap.quickTo(cursor, "y", {
-  duration: 0.6,
-  ease: "expo",
-});
-const hover_wrapper = document.querySelector(".mouse-over");
-hover_wrapper.addEventListener("mousemove", (e) => {
-  setCursorX(e.x);
-  setCursorY(e.y);
-});
-
-const tl = gsap.timeline({
-  paused: true,
-});
-
-tl.to(cursor, {
-  scale: 1,
-  opacity: 1,
-  duration: 0.5,
-  ease: "expo.inOut",
-});
-
-navLinks.forEach((navLink, i) => {
-  navLink.addEventListener("mouseover", () => {
-    cursorMedias[i].classList.add("active");
-    tl.play();
-  });
-});
-
-navLinks.forEach((navLink, i) => {
-  navLink.addEventListener("mouseout", () => {
-    tl.reverse();
-    cursorMedias[i].classList.remove("active");
-  });
-});
-
 /********* Smooth Scroll *********/
 
 // gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
@@ -398,6 +300,7 @@ $(".anim-fadeinup").each(function () {
     "+=0.3"
   );
 });
+
 // skew in-up
 $(".anim-skewinup").each(function () {
   let tl_SkewInUp = gsap.timeline({
@@ -423,7 +326,7 @@ $(".anim-skewinup").each(function () {
   );
 });
 
-
+// skew in-right
 $(".anim-skewinright").each(function () {
   let tl_SkewinRight = gsap.timeline({
     scrollTrigger: {
@@ -447,6 +350,32 @@ $(".anim-skewinright").each(function () {
     "+=0.3"
   );
 });
+
+// stretch in-right
+$(".anim-stretchinright").each(function () {
+  let tl_StretchInUp = gsap.timeline({
+    scrollTrigger: {
+      trigger: this,
+      start: "top bottom",
+      markers: false,
+    },
+  });
+
+  tl_StretchInUp.from(
+    this,
+    {
+      duration: 2,
+      autoAlpha: 0,
+      x: 100,
+      scaleX: 1.4,
+      transformOrigin: "left top",
+      ease: Expo.easeOut,
+      clearProps: "all",
+    },
+    "+=0.2"
+  );
+});
+
 // stretch in-up
 $(".anim-stretchinup").each(function () {
   let tl_StretchInUp = gsap.timeline({
@@ -892,4 +821,56 @@ $(".lt_btn").click(function () {
 });
 $(".rf-close-btn").click(function () {
   $(".right-form-slide").removeClass("active");
+});
+
+/********* Reveal Img On Title Hover ******** */
+
+const cursor = document.querySelector(".cursor");
+const cursorMedias = document.querySelectorAll(".cursor__media");
+const navLinks = document.querySelectorAll(".hover_item");
+
+gsap.set(cursor, {
+  xPercent: -50,
+  yPercent: -50,
+  scale: 0,
+});
+
+const setCursorX = gsap.quickTo(cursor, "x", {
+  duration: 0.6,
+  ease: "expo",
+});
+
+const setCursorY = gsap.quickTo(cursor, "y", {
+  duration: 0.6,
+  ease: "expo",
+});
+const hover_wrapper = document.querySelector(".mouse-over");
+hover_wrapper.addEventListener("mousemove", (e) => {
+  setCursorX(e.x);
+  setCursorY(e.y);
+});
+
+const tl = gsap.timeline({
+  paused: true,
+});
+
+tl.to(cursor, {
+  scale: 1,
+  opacity: 1,
+  duration: 0.5,
+  ease: "expo.inOut",
+});
+
+navLinks.forEach((navLink, i) => {
+  navLink.addEventListener("mouseover", () => {
+    cursorMedias[i].classList.add("active");
+    tl.play();
+  });
+});
+
+navLinks.forEach((navLink, i) => {
+  navLink.addEventListener("mouseout", () => {
+    tl.reverse();
+    cursorMedias[i].classList.remove("active");
+  });
 });
