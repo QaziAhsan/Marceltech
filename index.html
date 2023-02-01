@@ -20,28 +20,23 @@
   </head>
 
   <body class="tt-transition tt-magic-cursor">
-    <!-- <div class="cursorNew"></div>
-    <div class="cursor-follower"></div> -->
-    <div id="page-transition">
+    <!-- <div id="page-transition">
       <div class="ptr-overlay"></div>
       <div class="ptr-preloader">
         <div class="ptr-prel-content">
-          <!-- Hint: You may need to change the img height and opacity to match your logo type. You can do this from the "theme.css" file (find: ".ptr-prel-image"). -->
           <img
             src="assets/img/Marcel-Tech-Logo_02.png"
             class="ptr-prel-image tt-logo-light"
             alt="Logo"
           />
         </div>
-        <!-- /.ptr-prel-content -->
       </div>
-      <!-- /.ptr-preloader -->
-    </div>
+    </div> -->
     <div id="magic-cursor">
       <div id="ball"></div>
     </div>
     <main>
-      <div>
+      <div id="scroll-container">
         <header class="header-main">
           <div class="header-top">
             <div class="header-logo-wrapper">
@@ -182,12 +177,8 @@
           </div>
 
         </div>
-        <div class="scroll-content" id="content-wrap">
-          <!-- <div id="panel_right" class="panel-right">
-            <div>
-              <h3>Get in touch</h3>
-            </div>
-          </div> -->
+        <div>
+       
           <section class="hero">
             <img
               class="ph-image-inner hero-bg"
@@ -210,7 +201,7 @@
           <section class="about">
             <div class="container">
               <div class="row">
-                <div class="col-8">
+                <div class="col-lg-8">
                   <div class="anim-stretchinup">
                     <h2 class="title-primary">
                       Every project made by
@@ -302,7 +293,7 @@
                 </div>
                 <div class="mt-5">
                   <div class="row">
-                    <div class="col-8">
+                    <div class="col-lg-8">
                       <h2 class="title-primary mb-3 anim-stretchinup">
                         <div class="expertise-items mouse-over">
                           <div class="cursor">
@@ -365,11 +356,7 @@
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper">
                 <!-- Slides -->
-                <!-- Begin swiper slide 
-									======================== 
-									* Change data attributes (data-url="...", data-title="...", data-category="...") according to your needs.
-									* Use class "psi-image-is-light" if needed, it makes the elements dark and more visible if you use a very light image.
-									-->
+               
                 <div
                   class="swiper-slide"
                   data-url="single-project-1.html"
@@ -390,12 +377,7 @@
                   </div>
                   <!-- /.tt-portfolio-slider-item -->
                 </div>
-                <!-- End swiper slide -->
-                <!-- Begin swiper slide 
-									======================== 
-									* Change data attributes (data-url="...", data-title="...", data-category="...") according to your needs.
-									* Use class "psi-image-is-light" if needed, it makes the elements dark and more visible if you use a very light image.
-									-->
+              
                 <div
                   class="swiper-slide"
                   data-url="single-project-1.html"
@@ -416,12 +398,7 @@
                   </div>
                   <!-- /.tt-portfolio-slider-item -->
                 </div>
-                <!-- End swiper slide -->
-                <!-- Begin swiper slide 
-									======================== 
-									* Change data attributes (data-url="...", data-title="...", data-category="...") according to your needs.
-									* Use class "psi-image-is-light" if needed, it makes the elements dark and more visible if you use a very light image.
-									-->
+               
                 <div
                   class="swiper-slide"
                   data-url="single-project-1.html"
@@ -446,12 +423,7 @@
               </div>
               <!-- If we need pagination -->
             </div>
-            <!-- Begin portfolio slider caption
-							==================================== 
-							* Use class "psc-center" to align caption.
-							* Use class "psc-stroke" to enable caption title stroke style.
-							* Note: Titles and URLs are loaded from "swiper-slide" data attributes. Do not change them here!!!
-							-->
+         
             <div class="tt-portfolio-slider-caption psc-center">
               <div class="container">
                 <div class="tt-ps-caption-inner">
@@ -675,7 +647,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
 
   <!-- GSAP -->
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
@@ -683,4 +654,5 @@
   <script src="assets/js/swiper-bundle.min.js"></script>
 
   <script src="assets/js/main.js"></script>
+  
 </html>

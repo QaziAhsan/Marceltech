@@ -27,6 +27,13 @@ body {
   padding: 0;
   box-sizing: border-box;
   cursor: auto;
+  width: 100%;
+  height: 100vh;
+}
+#scroll-container {
+  width: auto;
+  height: 100vh;
+  margin: 0;
 }
 h1,
 h2,
@@ -49,7 +56,7 @@ p {
   font-size: 16px;
 }
 .title-primary {
-  font-size: 64px;
+  font-size: clamp(30px, 6vw, 64px);
   font-weight: 300;
 }
 .title-secondary {
@@ -236,7 +243,7 @@ body.tt-transition .ptr-prel-content {
 
 .overlay {
   position: absolute;
-  background: #100d0a;
+  background: #100d0af7;
   top: 0;
   left: 0;
   width: 100%;
@@ -312,7 +319,7 @@ body.tt-transition .ptr-prel-content {
   margin-bottom: 15px;
 }
 .nav-items a {
-  font-size: 35px;
+  font-size: clamp(20px, 5vw, 36px);
 }
 .nav-box .nav-right-items li a {
   font-size: 14px;
@@ -388,7 +395,7 @@ body.tt-transition .ptr-prel-content {
   box-shadow: none;
 }
 .right-form-slide h3 {
-  font-size: 46px;
+  font-size: clamp(20px, 5vw, 46px);
   margin: 15px 0;
 }
 .title-red {
@@ -543,13 +550,13 @@ body.tt-transition .ptr-prel-content {
 .hero h1 {
   font-family: "ArgentumSans";
   color: #ffffff;
-  font-size: 94px;
+  font-size: clamp(48px, 8vw, 94px);
   text-align: center;
   margin: 15px 0;
   font-weight: 300;
 }
 .hero.inner h1 {
-  font-size: 66px;
+  font-size: clamp(30px,10vw,66px);
   line-height: 109%;
 }
 .hero-bottom-title {
@@ -601,7 +608,7 @@ body.tt-transition .ptr-prel-content {
 .slide-content h2 {
   font-weight: 100;
   color: #ffffff4c;
-  font-size: 84px;
+  font-size: clamp(40px,10vw,84px)
 }
 .expertise {
   position: relative;
@@ -617,6 +624,16 @@ body.tt-transition .ptr-prel-content {
   position: absolute;
   right: 0;
   top: 50%;
+}
+.expertise-swipper .swiper-pagination-bullet {
+  background: white;
+  width: 15px;
+  height: 15px;
+  opacity: .8;
+}
+.expertise-swipper .swiper-pagination-bullet-active{
+  background: var(--text-secondary);
+
 }
 /********Expertise***********/
 
@@ -783,8 +800,8 @@ body.tt-transition .ptr-prel-content {
 }
 .testimonial-item .t-description {
   font-weight: 300;
-  font-size: 40px;
-  line-height: 47px;
+  font-size: clamp(20px, 5vw, 40px);
+  line-height: 1.5;
 }
 .t-client {
   display: flex;
@@ -837,8 +854,8 @@ body.tt-transition .ptr-prel-content {
 .lt_link {
   font-style: normal;
   font-weight: 300;
-  font-size: 150px;
-  line-height: 97%;
+  font-size: clamp(60px, 10vw, 150px);
+  line-height: 1;
   text-transform: capitalize;
 
   color: rgba(255, 255, 255, 0.45);
@@ -983,7 +1000,7 @@ img.tt-psi-image {
 /* Portfolio slider caption title */
 .tt-ps-caption-title {
   margin: 0;
-  font-size: clamp(40px, 4.8vw, 100px);
+  font-size: clamp(30px, 4.8vw, 100px);
   font-weight: bold;
   font-weight: 600;
   line-height: 1.2;
@@ -1071,12 +1088,13 @@ body:not(.tt-magic-cursor) .tt-ps-caption-title a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 2%;
-  left: 50%;
-  width: 300px;
-  height: 60px;
+  bottom: 50%;
+  top: 50%;
+  left: 3%;
+  width: 60px;
+  height: 200px;
   z-index: 1;
-  transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, -50%, 0);
 }
 @media (max-width: 767px) {
   .tt-portfolio-slider-navigation {
@@ -1087,14 +1105,15 @@ body:not(.tt-magic-cursor) .tt-ps-caption-title a:hover {
 .tt-ps-nav-prev,
 .tt-ps-nav-next {
   position: absolute;
-  top: 0;
   z-index: 20;
 }
 .tt-ps-nav-prev {
   left: 0;
+  top: 0;
 }
 .tt-ps-nav-next {
-  right: 0;
+  left: 0;
+  bottom: 0;
 }
 
 .tt-ps-nav-arrow {
@@ -1125,10 +1144,10 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
   -webkit-font-smoothing: antialiased;
 }
 .tt-ps-nav-arrow-prev::after {
-  content: "\f053";
+  content: "\f176";
 }
 .tt-ps-nav-arrow-next::after {
-  content: "\f054";
+  content: "\f175";
 }
 
 .tt-ps-nav-arrow.tt-ps-nav-arrow-disabled {
@@ -1321,7 +1340,8 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
 .what-we-do h2 {
   margin: 20px 30px 50px;
   font-weight: 300;
-  font-size: 94px;
+  font-size: clamp(30px,10vw,94px);
+  line-height: 1.2;
 }
 .counter-box {
   padding: 25px 0;
@@ -1329,7 +1349,7 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
 }
 .counter-box h3 {
   font-weight: 300;
-  font-size: 94px;
+  font-size: clamp(40px,10vw,94px);
   font-family: "ArgentumSans";
 }
 .title-red {
@@ -1359,7 +1379,7 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
 .our-clients p {
   font-family: "ArgentumSans";
   font-weight: 300;
-  font-size: 54px;
+  font-size: clamp(25px,10vw,54px);
   line-height: 1;
 }
 .services {
@@ -1385,7 +1405,7 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
   font-family: "ArgentumSans";
   font-style: normal;
   font-weight: 300;
-  font-size: 64px;
+  font-size: clamp(30px,10vw,64px);
   margin: 10px 0 20px;
   line-height: 1;
 }
@@ -1404,7 +1424,7 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
 .benefits-top h2 {
   font-family: "ArgentumSans";
   font-weight: 300;
-  font-size: 64px;
+  font-size: clamp(30px,10vw,64px);
   line-height: 118%;
 }
 .benefits-bottom {
@@ -1423,4 +1443,73 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
   font-size: 16px;
   line-height: 19px;
   color: rgba(255, 255, 255, 0.66);
+}
+
+@media (max-width: 992px) {
+  .lets_talk {
+    padding: 20px 0 50px;
+  }
+  .tt-portfolio-slider .swiper {
+    height: calc(70vh - 50px);
+  }
+  .tt-ps-caption-inner {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    height: 80vh;
+  }
+  .rf-content {
+    padding: 20px;
+  }
+  .right-form-slide {
+    display: block;
+  }
+  .rf-close-btn {
+    top: 3%;
+    right: 3%;
+    font-size: 24px;
+  }
+  .header-main .logo-brand {
+    height: 15px;
+  }
+  .header-top {
+    padding: 15px;
+  }
+  .header-main.open {
+    height: 100%;
+  }
+  .overlay nav {
+    padding: 100px 20px 5%;
+  }
+  .nav-box {
+    margin-bottom: 0;
+    margin-top: 10px;
+  }
+  .tt-portfolio-slider-navigation {
+    bottom: 0;
+    top: unset;
+    right: 50%;
+    left: 50%;
+    transform: translate3d(-50%, 0%, 0);
+    height: 70px;
+    width: 50%;
+  }
+  .tt-ps-nav-next {
+    right: 0;
+    left: unset;
+  }
+  .tt-ps-caption-inner {
+    background: #000000a6;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+.what-we-do h2 {
+  margin: 20px 0px 20px;
+}
+.project-item-wrapper {
+  padding: 20px 20px;
+}
 }

@@ -823,6 +823,10 @@ $(".rf-close-btn").click(function () {
   $(".right-form-slide").removeClass("active");
 });
 
+
+
+
+
 /********* Reveal Img On Title Hover ******** */
 
 const cursor = document.querySelector(".cursor");
@@ -874,3 +878,13 @@ navLinks.forEach((navLink, i) => {
     cursorMedias[i].classList.remove("active");
   });
 });
+
+
+
+
+
+
+
+
+
+
