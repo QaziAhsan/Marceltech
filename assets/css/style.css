@@ -556,7 +556,7 @@ body.tt-transition .ptr-prel-content {
   font-weight: 300;
 }
 .hero.inner h1 {
-  font-size: clamp(30px,10vw,66px);
+  font-size: clamp(30px, 10vw, 66px);
   line-height: 109%;
 }
 .hero-bottom-title {
@@ -608,7 +608,7 @@ body.tt-transition .ptr-prel-content {
 .slide-content h2 {
   font-weight: 100;
   color: #ffffff4c;
-  font-size: clamp(40px,10vw,84px)
+  font-size: clamp(40px, 10vw, 84px);
 }
 .expertise {
   position: relative;
@@ -629,11 +629,10 @@ body.tt-transition .ptr-prel-content {
   background: white;
   width: 15px;
   height: 15px;
-  opacity: .8;
+  opacity: 0.8;
 }
-.expertise-swipper .swiper-pagination-bullet-active{
+.expertise-swipper .swiper-pagination-bullet-active {
   background: var(--text-secondary);
-
 }
 /********Expertise***********/
 
@@ -1340,7 +1339,7 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
 .what-we-do h2 {
   margin: 20px 30px 50px;
   font-weight: 300;
-  font-size: clamp(30px,10vw,94px);
+  font-size: clamp(30px, 10vw, 94px);
   line-height: 1.2;
 }
 .counter-box {
@@ -1349,7 +1348,7 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
 }
 .counter-box h3 {
   font-weight: 300;
-  font-size: clamp(40px,10vw,94px);
+  font-size: clamp(40px, 10vw, 94px);
   font-family: "ArgentumSans";
 }
 .title-red {
@@ -1379,7 +1378,7 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
 .our-clients p {
   font-family: "ArgentumSans";
   font-weight: 300;
-  font-size: clamp(25px,10vw,54px);
+  font-size: clamp(25px, 10vw, 54px);
   line-height: 1;
 }
 .services {
@@ -1405,7 +1404,7 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
   font-family: "ArgentumSans";
   font-style: normal;
   font-weight: 300;
-  font-size: clamp(30px,10vw,64px);
+  font-size: clamp(30px, 10vw, 64px);
   margin: 10px 0 20px;
   line-height: 1;
 }
@@ -1424,7 +1423,7 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
 .benefits-top h2 {
   font-family: "ArgentumSans";
   font-weight: 300;
-  font-size: clamp(30px,10vw,64px);
+  font-size: clamp(30px, 10vw, 64px);
   line-height: 118%;
 }
 .benefits-bottom {
@@ -1487,6 +1486,13 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
     margin-bottom: 0;
     margin-top: 10px;
   }
+  .about-desc.mt-card {
+    margin-top: 40px;
+    text-align: center;
+  }
+  .aboutus-link-round-wrapper {
+    text-align: center;
+  }
   .tt-portfolio-slider-navigation {
     bottom: 0;
     top: unset;
@@ -1505,11 +1511,24 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
     padding: 20px;
     border-radius: 5px;
     text-align: center;
-}
-.what-we-do h2 {
-  margin: 20px 0px 20px;
-}
-.project-item-wrapper {
-  padding: 20px 20px;
-}
+  }
+  .what-we-do h2 {
+    margin: 20px 0px 20px;
+  }
+  .project-item-wrapper {
+    padding: 20px 20px;
+  }
+  .footer-quick-links {
+    margin: 15px 0;
+  }
+  .footer-quick-links ul li {
+    margin-bottom: 10px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-bottom-left {
+    margin-bottom: 15px;
+  }
 }

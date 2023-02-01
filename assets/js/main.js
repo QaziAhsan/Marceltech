@@ -453,7 +453,7 @@ tlPhParallax.to(".ph-image-inner", { yPercent: 30, scale: 1.05 }, 0);
 // https://codepen.io/Sahil89/pen/MQbdNR
 // https://greensock.com/forums/topic/17490-follow-button-effect/?tab=comments#comment-81107
 // =======================================================================================
-
+if(!isMobile){
 var $mouse = { x: 0, y: 0 }; // Cursor position
 var $pos = { x: 0, y: 0 }; // Cursor position
 var $ratio = 0.15; // delay follow cursor
@@ -580,7 +580,7 @@ $("a")
 // $(document).mousemove(function () {
 //   gsap.to("#magic-cursor", { duration: 0.3, autoAlpha: 1 });
 // });
-
+}
 // =======================================================================================
 // Portfolio slider (full screen slider)
 // Source: https://swiperjs.com/
