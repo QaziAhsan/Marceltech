@@ -5,12 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marceltech</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -20,23 +15,6 @@
   </head>
 
   <body class="tt-transition tt-magic-cursor">
-    <!-- <div class="cursorNew"></div>
-    <div class="cursor-follower"></div> -->
-    <div id="page-transition">
-      <div class="ptr-overlay"></div>
-      <div class="ptr-preloader">
-        <div class="ptr-prel-content">
-          <!-- Hint: You may need to change the img height and opacity to match your logo type. You can do this from the "theme.css" file (find: ".ptr-prel-image"). -->
-          <img
-            src="assets/img/Marcel-Tech-Logo_02.png"
-            class="ptr-prel-image tt-logo-light"
-            alt="Logo"
-          />
-        </div>
-        <!-- /.ptr-prel-content -->
-      </div>
-      <!-- /.ptr-preloader -->
-    </div>
     <div id="magic-cursor">
       <div id="ball"></div>
     </div>
@@ -106,9 +84,9 @@
             </nav>
           </div>
         </header>
-        <div class="right-form-slide" id="lt-form">
-          <div class="rf-content">
-            <button class="rf-close-btn">
+        <div class="form-wrapper" id="lt-form">
+          <div class="form-content">
+            <button class="form-close-btn">
               <i class="fa-solid fa-xmark"></i>
             </button>
             <h3 class="title-red">Hello!</h3>
@@ -184,326 +162,125 @@
           </div>
         </div>
         <div class="scroll-content" id="content-wrap">
-          <section class="hero inner">
-            <img
-              class="ph-image-inner hero-bg"
-              src="assets/img/about-bg.jpg"
-              alt=""
-            />
+          <section class="inner-main">
+            <div class="container">
+              <div class="breadcrumbs">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">
+                      Case Studies
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+              <div class="row">
+                <div class="col-lg-8 anim-stretchinup">
+                  <h1>Our Goals We do amazing things with amazing People.</h1>
+                  <ul class="case-studies-list">
+                    <li><p>UX/UI Design</p></li>
+                    <li><p>Branding</p></li>
+                    <li><p>Application Design</p></li>
+                    <li><p>Web Application</p></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="case-studies-wrapper">
             <div class="container">
               <div class="row">
-                <div class="col-md-12">
-                  <h1 class="anim-stretchinup text-left">
-                    We create award — winning Websites, memorable Campaigns,&
-                    remarkable Brands.
-                  </h1>
-                  <div class="btn-wrapper text-left mt-5">
-                    <a href="#" class="btn btn-main">Get a free quote</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="about-us">
-            <div class="container">
-              <div class="anim-stretchinup">
-                <h2 class="title-primary mb-5 pb-5">
-                  Our Goals We create digital products for start-ups, brands,
-                  and entrepreneurs with interesting targets
-                </h2>
-              </div>
-              <div class="abs-details">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="abs-left">
-                      <h3 class="abs-title">Established in 2007</h3>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="abs-right anim-skewinright anim-skewinright">
-                      <div>
-                        <p class="abs-descrption">
-                          In a few short years, Locomotive has made its mark on
-                          Montreal — our home and a powerhouse recognized
-                          internationally for its creativity. creating memorable
-                          brands and digital products.
-                        </p>
+                <div class="col-lg-8">
+                  <div class="case-studies-card large">
+                    <a href="case-studies-inner.html" data-cursor="view">
+                      <div class="case-studies-card-img anim-zoomin">
+                        <img src="assets/img/cs-1.jpg" alt="" />
                       </div>
+                    </a>
+                   
+                    <div class="case-studies-card-content">
+                      <h3 class="title-secondary">Company Name</h3>
+                      <h2>Project Name</h2>
+                      <ul class="cs-list">
+                        <li>Strategy</li>
+                        <li>UX/UI Design.</li>
+                        <li>IOS App</li>
+                      </ul>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="abs-left">
-                      <h3 class="abs-title">Our Vision</h3>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="abs-right anim-skewinright">
-                      <div>
-                        <h3 class="desc-large">
-                          Marceltech® isn’t just a team — it’s a family. We all
-                          share the same vision here: to push ideas all the way,
-                          without taking ourselves too seriously, and overcoming
-                          challenges together.
-                        </h3>
-                        <p class="abs-descrption">
-                          Marceltech stands out from the rest of agencies for
-                          its focus on the client's business. Deeply diving into
-                          processes, we find pressure points and the most
-                          effective solutions against those problems.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="abs-left">
-                      <h3 class="abs-title">Our Expertise</h3>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="abs-right anim-skewinright">
-                      <div>
-                        <p class="abs-descrption">
-                          Marceltech® isn’t just a team — it’s a family. We all
-                          share the same vision here: to push ideas all the way,
-                          without taking ourselves too seriously, and overcoming
-                          challenges together.
-                        </p>
-                        <div class="btn-wrapper text-left mt-3">
-                          <a href="#" class="btn btn-main"
-                            >Check all expertise</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="expertise-carousel anim-zoomin">
-            <div class="swiper expertise-swipper" data-cursor="Drag">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide expertise-item">
-                  <img
-                    class="expertise-img"
-                    src="assets/img/expertise/development.jpg"
-                    alt=""
-                  />
-                  <h3 class="expertise-title">User Research</h3>
-                </div>
-                <div class="swiper-slide expertise-item">
-                  <img
-                    class="expertise-img"
-                    src="assets/img/expertise/UX_Design.jpg"
-                    alt=""
-                  />
-                  <h3 class="expertise-title">User Research</h3>
-                </div>
-                <div class="swiper-slide expertise-item">
-                  <img
-                    class="expertise-img"
-                    src="assets/img/expertise/UX_Research.jpg"
-                    alt=""
-                  />
-                  <h3 class="expertise-title">User Research</h3>
-                </div>
-                <div class="swiper-slide expertise-item">
-                  <img
-                    class="expertise-img"
-                    src="assets/img/expertise/web-development.jpg"
-                    alt=""
-                  />
-                  <h3 class="expertise-title">User Research</h3>
-                </div>
-                <div class="swiper-slide expertise-item">
-                  <img
-                    class="expertise-img"
-                    src="assets/img/expertise/development.jpg"
-                    alt=""
-                  />
-                  <h3 class="expertise-title">User Research</h3>
-                </div>
-                <div class="swiper-slide expertise-item">
-                  <img
-                    class="expertise-img"
-                    src="assets/img/expertise/UX_Design.jpg"
-                    alt=""
-                  />
-                  <h3 class="expertise-title">User Research</h3>
-                </div>
-                <div class="swiper-slide expertise-item">
-                  <img
-                    class="expertise-img"
-                    src="assets/img/expertise/UX_Research.jpg"
-                    alt=""
-                  />
-                  <h3 class="expertise-title">User Research</h3>
-                </div>
-                <div class="swiper-slide expertise-item">
-                  <img
-                    class="expertise-img"
-                    src="assets/img/expertise/web-development.jpg"
-                    alt=""
-                  />
-                  <h3 class="expertise-title">User Research</h3>
-                </div>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </section>
-          <section class="what-we-do">
-            <div class="container anim-stretchinup">
-              <h3 class="title-top">What we do</h3>
-              <h2>What we did We constantly innovating in the DigitalWorld.</h2>
-              <div class="row">
-                <div class="col-lg-3 col-md-6">
-                  <div class="counter-box">
-                    <h3><span class="counter title-red">8</span></h3>
-                    <p>year's experience</p>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                  <div class="counter-box">
-                    <h3><span class="counter">214</span></h3>
-
-                    <p>year's experience</p>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                  <div class="counter-box">
-                    <h3><span class="counter">2</span>k+</h3>
-
-                    <p>year's experience</p>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                  <div class="counter-box">
-                    <h3><span class="counter">79</span>%</h3>
-
-                    <p>year's experience</p>
-                  </div>
-                </div>
-              </div>
-              <div class="text-center mt-5 pt-5">
-                <div class="aboutus-link-round circle-red">
-                  <a href="#">
-                    <img
-                      class="aboutus-cirle"
-                      src="assets/img/become-our-client.png"
-                      alt=""
-                    />
-                    <p>
-                      Become <br />
-                      Our Client
-                    </p>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="slide-content py-5">
-            <marquee behavior="alternate" direction="left">
-              <h2>
-                Every project made by marceltech is created at the intersection
-                between design and technology, making the future — today
-              </h2>
-            </marquee>
-          </section>
-          <section class="projects mb-5">
-            <div class="pt-5">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-9">
-                    <div class="our-clients">
-                      <h3 class="title-secondary mb-3">Experties</h3>
-                      <p>
-                        our clients We work with people from all over the world
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="mt-5">
                   <div class="row">
-                    <div class="col-12">
-                      <div class="projects-items mouse-over">
-                        <div class="cursor">
-                          <img
-                            src="assets/img/branding-item.jpg"
-                            class="cursor__media"
-                          />
-                          <img
-                            src="https://images.unsplash.com/photo-1609314491503-a864b0abf611?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                            class="cursor__media"
-                          />
-                          <img
-                            src="https://images.unsplash.com/photo-1643125978288-7c7c8babc5fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
-                            class="cursor__media"
-                          />
-                          <img
-                            src="assets/img/branding-item.jpg"
-                            class="cursor__media"
-                          />
-                          <img
-                            src="https://images.unsplash.com/photo-1609314491503-a864b0abf611?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                            class="cursor__media"
-                          />
-                          <img
-                            src="https://images.unsplash.com/photo-1643125978288-7c7c8babc5fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
-                            class="cursor__media"
-                          />
-                        </div>
-                        <div class="row anim-stretchinup">
-                          <div class="col-lg-3 col-md-3">
-                            <div class="project-item-wrapper">
-                              <a href="#" class="hover_item">Vava VPN</a>
-                            </div>
+                    <div class="col-lg-6 ">
+                      <div class="case-studies-card small translate-card" style="margin-top: 250px;">
+                        <a href="case-studies-inner.html" data-cursor="view">
+                          <div class="case-studies-card-img anim-zoomin">
+                            <img src="assets/img/expertise/development.jpg" alt="" />
                           </div>
-                          <div class="col-lg-3 col-md-3">
-                            <div class="project-item-wrapper">
-                              <a href="#" class="hover_item">Temptations</a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3 col-md-3">
-                            <div class="project-item-wrapper">
-                              <a href="#" class="hover_item">Commerce Vest</a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3 col-md-3">
-                            <div class="project-item-wrapper">
-                              <a href="#" class="hover_item"
-                                >Wooden Staircase</a
-                              >
-                            </div>
-                          </div>
-                          <div class="col-lg-3 col-md-3">
-                            <div class="project-item-wrapper">
-                              <a href="#" class="hover_item"
-                                >Wooden Staircase</a
-                              >
-                            </div>
-                          </div>
-                          <div class="col-lg-3 col-md-3">
-                            <div class="project-item-wrapper">
-                              <a href="#" class="hover_item">Commerce Vest</a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3 col-md-3">
-                            <div class="project-item-wrapper">
-                              <a href="#" class="hover_item">Temptations</a>
-                            </div>
-                          </div>
-                          <div class="col-lg-3 col-md-3">
-                            <div class="project-item-wrapper">
-                              <a href="#" class="hover_item">Design Strategy</a>
-                            </div>
-                          </div>
+                        </a>
+                        <div class="case-studies-card-content">
+                          <h3 class="title-secondary">Company Name</h3>
+                          <h2>Project Name</h2>
+                          <ul class="cs-list">
+                            <li>Strategy</li>
+                            <li>UX/UI Design.</li>
+                            <li>IOS App</li>
+                          </ul>
                         </div>
                       </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="case-studies-card small translate-card">
+                        <a href="case-studies-inner.html" data-cursor="view">
+                          <div class="case-studies-card-img anim-zoomin">
+                            <img src="assets/img/expertise/UX_Design.jpg" alt="" />
+                          </div>
+                        </a>
+                        <div class="case-studies-card-content">
+                          <h3 class="title-secondary">Company Name</h3>
+                          <h2>Project Name</h2>
+                          <ul class="cs-list">
+                            <li>Strategy</li>
+                            <li>UX/UI Design.</li>
+                            <li>IOS App</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="case-studies-card small translate-card"  style="margin-top: 250px;">
+                    <a href="case-studies-inner.html" data-cursor="view">
+                      <div class="case-studies-card-img anim-zoomin">
+                        <img src="assets/img/cs-3.jpg" alt="" />
+                      </div>
+                    </a>
+                    <div class="case-studies-card-content">
+                      <h3 class="title-secondary">Company Name</h3>
+                      <h2>Project Name</h2>
+                      <ul class="cs-list">
+                        <li>Strategy</li>
+                        <li>UX/UI Design.</li>
+                        <li>IOS App</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4"></div>
+                <div class="col-lg-8">
+                  <div class="case-studies-card large translate-card" style="margin-top:-150px;">
+                    <a href="case-studies-inner.html" data-cursor="view">
+                      <div class="case-studies-card-img anim-zoomin">
+                        <img src="assets/img/cs-2.jpg" alt="" />
+                      </div>
+                    </a>
+                    <div class="case-studies-card-content">
+                      <h3 class="title-secondary">Company Name</h3>
+                      <h2>Project Name</h2>
+                      <ul class="cs-list">
+                        <li>Strategy</li>
+                        <li>UX/UI Design.</li>
+                        <li>IOS App</li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -511,78 +288,9 @@
             </div>
           </section>
 
-          <section class="testimonials anim-stretchinup">
-            <div class="container">
-              <div class="row">
-                <div class="col-12">
-                  <h3 class="title-secondary mb-5">Some thoughts</h3>
-                  <div class="swiper testimonial-swipper">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <div class="testimonial-item">
-                          <p class="t-description">
-                            “The most impressive thing about marceltech.com team
-                            is their ability to find solutions to our issues and
-                            willingness to take on any challenge. We're
-                            satisfied with the work that Marceltech.com has done
-                            for us on both the development and testing sides on
-                            our platform.”
-                          </p>
-                          <div class="t-client">
-                            <img src="assets/img/client.jpg" alt="" />
-                            <div class="client-description">
-                              <h5 class="c-title">Mark David</h5>
-                              <p class="p-sub-title">
-                                CEO, Advanced Energy Solutions
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="testimonial-item">
-                          <p class="t-description">
-                            “The most impressive thing about marceltech.com team
-                            is their ability to find solutions to our issues and
-                            willingness to take on any challenge. We're
-                            satisfied with the work that Marceltech.com has done
-                            for us on both the development and testing sides on
-                            our platform.”
-                          </p>
-                          <div class="t-client">
-                            <img src="assets/img/client.jpg" alt="" />
-                            <div class="client-description">
-                              <h5 class="c-title">Mark David</h5>
-                              <p class="p-sub-title">
-                                CEO, Advanced Energy Solutions
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="testimonial-nav">
-                      <div class="swiper-button-next">
-                        <img
-                          src="assets/img/arrow-right.png"
-                          alt="arrow-right"
-                        />
-                      </div>
-                      <div class="swiper-button-prev">
-                        <img
-                          src="assets/img/arrow-left.png"
-                          alt="arrow-right"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
           <section class="lets_talk">
-            <div class="container anim-stretchinup">
-              <a href="#" class="lt_link" data-cursor="View">Let’s talk</a>
+            <div class="container  anim-skewinup">
+              <a href="contact-us.html" class="lt_link" data-cursor="View">Let’s talk</a>
             </div>
           </section>
           <footer class="footer-main">
@@ -691,55 +399,24 @@
     </main>
   </body>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-
+  <script src="assets/js/jquery-3.2.1.slim.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
   <!-- GSAP -->
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/ScrollTrigger.min.js"></script>
+  <script src="assets/js/TweenMax.min.js"></script>
 
   <script src="assets/js/swiper-bundle.min.js"></script>
-  <!-- <script type="module" src="assets/js/countUp.min.js"></script> -->
-  <!-- <script src="assets/js/countUp.umd.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+  <script src="assets/js/waypoints.min.js"></script>
+
+  <!-- Count Up -->
   <script src="assets/js/jquery.countup.min.js"></script>
+
   <script src="assets/js/main.js"></script>
+
   <script>
-    var swiper = new Swiper(".expertise-swipper", {
-      slidesPerView: 5,
-      spaceBetween: 30,
-      centeredSlides: true,
-      speed: 1200,
-      loop: true,
-      autoplay: {
-        delay: 5500,
-        disableOnInteraction: false,
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-          spaceBetween: 20,
-          centeredSlides: false,
-        },
-        640: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-        },
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 40,
-        },
-        1500: {
-          slidesPerView: 5,
-          spaceBetween: 50,
-        },
-      },
-    });
-  </script>
-  <script type="module">
     $(".counter").countUp();
   </script>
 </html>

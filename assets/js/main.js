@@ -441,145 +441,183 @@ let tlPhParallax = gsap.timeline({
     trigger: "#page-header",
     start: "top top",
     end: "bottom top",
-    scrub: 3,
+    scrub: 2,
     markers: false,
   },
 });
 
 tlPhParallax.to(".ph-image-inner", { yPercent: 30, scale: 1.05 }, 0);
+tlPhParallax.to(".showcase-img", { yPercent: -30, scale: 1 }, 0);
+
+let tlTextSlide = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#page-header",
+    start: "top top",
+    endTrigger: "footer",
+    end: "+=2500",
+    scrub: 1,
+    markers: false,
+  },
+});
+tlTextSlide.to(".moveleft", { xPercent: -30, scale: 1 }, 0);
+tlTextSlide.to(".moveright", { xPercent: 30, scale: 1 }, 0);
+
+// let tlCsFullImg = gsap
+//   .timeline({
+//     scrollTrigger: {
+//       trigger: ".cs-img-full",
+//       start: "top 100%+", 
+//       endTrigger: "footer",
+//       end: "+=2500",
+//       scrub: 1,
+//       markers: false,
+//     },
+//   })
+//   .to(".cs-img-full img", { yPercent: -30, scale: 1 }, 0);
+
+// let translateCard = gsap.timeline({
+//   scrollTrigger: {
+//     trigger: ".scroll-content",
+//     start: "top top",
+//     end: "bottom top",
+//     scrub: 1.5,
+//     markers: false,
+//   },
+// });
+// translateCard.to(".translate-card", { yPercent: -50, scale: 1 }, 0);
 
 // =======================================================================================
 // Magic cursor (no effect on small screens!)
 // https://codepen.io/Sahil89/pen/MQbdNR
 // https://greensock.com/forums/topic/17490-follow-button-effect/?tab=comments#comment-81107
 // =======================================================================================
-if(!isMobile){
-var $mouse = { x: 0, y: 0 }; // Cursor position
-var $pos = { x: 0, y: 0 }; // Cursor position
-var $ratio = 0.15; // delay follow cursor
-var $active = false;
-var $ball = $("#ball");
+if (!isMobile) {
+  var $mouse = { x: 0, y: 0 }; // Cursor position
+  var $pos = { x: 0, y: 0 }; // Cursor position
+  var $ratio = 0.15; // delay follow cursor
+  var $active = false;
+  var $ball = $("#ball");
 
-var $ballWidth = 34; // Ball default width
-var $ballHeight = 34; // Ball default height
-var $ballScale = 1; // Ball default scale
-var $ballOpacity = 0.5; // Ball default opacity
-var $ballBorderWidth = 2; // Ball default border width
+  var $ballWidth = 34; // Ball default width
+  var $ballHeight = 34; // Ball default height
+  var $ballScale = 1; // Ball default scale
+  var $ballOpacity = 0.5; // Ball default opacity
+  var $ballBorderWidth = 2; // Ball default border width
 
-gsap.set($ball, {
-  // scale from middle and style ball
-  xPercent: -50,
-  yPercent: -50,
-  width: $ballWidth,
-  height: $ballHeight,
-  borderWidth: $ballBorderWidth,
-  opacity: $ballOpacity,
-});
+  gsap.set($ball, {
+    // scale from middle and style ball
+    xPercent: -50,
+    yPercent: -50,
+    width: $ballWidth,
+    height: $ballHeight,
+    borderWidth: $ballBorderWidth,
+    opacity: $ballOpacity,
+  });
 
-document.addEventListener("mousemove", mouseMove);
+  document.addEventListener("mousemove", mouseMove);
 
-function mouseMove(e) {
-  $mouse.x = e.clientX;
-  $mouse.y = e.clientY;
-}
-
-gsap.ticker.add(updatePosition);
-
-function updatePosition() {
-  if (!$active) {
-    $pos.x += ($mouse.x - $pos.x) * $ratio;
-    $pos.y += ($mouse.y - $pos.y) * $ratio;
-
-    gsap.set($ball, { x: $pos.x, y: $pos.y });
+  function mouseMove(e) {
+    $mouse.x = e.clientX;
+    $mouse.y = e.clientY;
   }
-}
 
-// Cursor view on hover (data attribute "data-cursor="...").
-$("[data-cursor]").each(function () {
-  $(this)
-    .on("mouseenter", function () {
-      $ball.append('<div class="ball-view"></div>');
-      $(".ball-view").append($(this).attr("data-cursor"));
-      gsap.to(ball, {
-        duration: 0.3,
-        yPercent: -75,
-        width: 65,
-        height: 65,
-        opacity: 1,
-        borderWidth: 0,
-        backgroundColor: "#FFF",
+  gsap.ticker.add(updatePosition);
+
+  function updatePosition() {
+    if (!$active) {
+      $pos.x += ($mouse.x - $pos.x) * $ratio;
+      $pos.y += ($mouse.y - $pos.y) * $ratio;
+
+      gsap.set($ball, { x: $pos.x, y: $pos.y });
+    }
+  }
+
+  // Cursor view on hover (data attribute "data-cursor="...").
+  $("[data-cursor]").each(function () {
+    $(this)
+      .on("mouseenter", function () {
+        $ball.append('<div class="ball-view"></div>');
+        $(".ball-view").append($(this).attr("data-cursor"));
+        gsap.to(ball, {
+          duration: 0.3,
+          yPercent: -75,
+          width: 65,
+          height: 65,
+          opacity: 1,
+          borderWidth: 0,
+          backgroundColor: "#FFF",
+        });
+        gsap.to(".ball-view", { duration: 0.3, scale: 1, autoAlpha: 1 });
+      })
+      .on("mouseleave", function () {
+        gsap.to(ball, {
+          duration: 0.3,
+          yPercent: -50,
+          width: $ballWidth,
+          height: $ballHeight,
+          opacity: $ballOpacity,
+          borderWidth: $ballBorderWidth,
+          backgroundColor: "transparent",
+        });
+        gsap.to(".ball-view", {
+          duration: 0.3,
+          scale: 0,
+          autoAlpha: 0,
+          clearProps: "all",
+        });
+        $ball.find(".ball-view").remove();
       });
-      gsap.to(".ball-view", { duration: 0.3, scale: 1, autoAlpha: 1 });
+    $(this).addClass("not-hide-cursor");
+  });
+
+  // Show/hide magic cursor
+  // =======================
+
+  // Hide on hover.
+  $(
+    "a, button, .tt-btn, .tt-form-control, .tt-form-radio, .tt-form-check, .hide-cursor"
+  ) // class "hide-cursor" is for global use.
+    .not(".not-hide-cursor") // omit from selection (class "not-hide-cursor" is for global use).
+    .not(".cursor-alter") // omit from selection
+    .not(".tt-main-menu-list > li > a") // omit from selection
+    .not(".tt-main-menu-list > li > .tt-submenu-trigger > a") // omit from selection
+    .not(".overlay")
+    .on("mouseenter", function () {
+      gsap.to($ball, { duration: 0.3, scale: 0, opacity: 0 });
     })
     .on("mouseleave", function () {
-      gsap.to(ball, {
+      gsap.to($ball, {
         duration: 0.3,
-        yPercent: -50,
-        width: $ballWidth,
-        height: $ballHeight,
+        scale: $ballScale,
         opacity: $ballOpacity,
-        borderWidth: $ballBorderWidth,
-        backgroundColor: "transparent",
       });
-      gsap.to(".ball-view", {
-        duration: 0.3,
-        scale: 0,
-        autoAlpha: 0,
-        clearProps: "all",
-      });
-      $ball.find(".ball-view").remove();
     });
-  $(this).addClass("not-hide-cursor");
-});
 
-// Show/hide magic cursor
-// =======================
-
-// Hide on hover.
-$(
-  "a, button, .tt-btn, .tt-form-control, .tt-form-radio, .tt-form-check, .hide-cursor"
-) // class "hide-cursor" is for global use.
-  .not(".not-hide-cursor") // omit from selection (class "not-hide-cursor" is for global use).
-  .not(".cursor-alter") // omit from selection
-  .not(".tt-main-menu-list > li > a") // omit from selection
-  .not(".tt-main-menu-list > li > .tt-submenu-trigger > a") // omit from selection
-  .not(".overlay")
-  .on("mouseenter", function () {
-    gsap.to($ball, { duration: 0.3, scale: 0, opacity: 0 });
-  })
-  .on("mouseleave", function () {
-    gsap.to($ball, {
-      duration: 0.3,
-      scale: $ballScale,
-      opacity: $ballOpacity,
+  // Hide on click.
+  $("a")
+    .not('[target="_blank"]') // omit from selection.
+    .not('[href^="#"]') // omit from selection.
+    .not('[href^="mailto"]') // omit from selection.
+    .not('[href^="tel"]') // omit from selection.
+    .not(".lg-trigger") // omit from selection.
+    .not(".tt-btn-disabled a") // omit from selection.
+    .on("click", function () {
+      gsap.to($ball, { duration: 0.3, scale: 1.3, autoAlpha: 0 });
     });
-  });
 
-// Hide on click.
-$("a")
-  .not('[target="_blank"]') // omit from selection.
-  .not('[href^="#"]') // omit from selection.
-  .not('[href^="mailto"]') // omit from selection.
-  .not('[href^="tel"]') // omit from selection.
-  .not(".lg-trigger") // omit from selection.
-  .not(".tt-btn-disabled a") // omit from selection.
-  .on("click", function () {
-    gsap.to($ball, { duration: 0.3, scale: 1.3, autoAlpha: 0 });
-  });
+  // Show/hide on document leave/enter.
+  // $(document)
+  //   .on("mouseleave", function () {
+  //     gsap.to("#magic-cursor", { duration: 0.3, autoAlpha: 0 });
+  //   })
+  //   .on("mouseenter", function () {
+  //     gsap.to("#magic-cursor", { duration: 0.3, autoAlpha: 1 });
+  //   });
 
-// Show/hide on document leave/enter.
-// $(document)
-//   .on("mouseleave", function () {
-//     gsap.to("#magic-cursor", { duration: 0.3, autoAlpha: 0 });
-//   })
-//   .on("mouseenter", function () {
-//     gsap.to("#magic-cursor", { duration: 0.3, autoAlpha: 1 });
-//   });
-
-// // Show as the mouse moves.
-// $(document).mousemove(function () {
-//   gsap.to("#magic-cursor", { duration: 0.3, autoAlpha: 1 });
-// });
+  // // Show as the mouse moves.
+  // $(document).mousemove(function () {
+  //   gsap.to("#magic-cursor", { duration: 0.3, autoAlpha: 1 });
+  // });
 }
 // =======================================================================================
 // Portfolio slider (full screen slider)
@@ -818,62 +856,62 @@ $("#toggle").click(function () {
 
 $(".lt_btn").click(function () {
   $(this).toggleClass("active");
-  $(".right-form-slide").toggleClass("active");
+  $(".form-wrapper").toggleClass("active");
 });
-$(".rf-close-btn").click(function () {
-  $(".right-form-slide").removeClass("active");
+$(".form-close-btn").click(function () {
+  $(".form-wrapper").removeClass("active");
 });
 
 /********* Reveal Img On Title Hover ******** */
 
-if(!isMobile){
-const cursor = document.querySelector(".cursor");
-const cursorMedias = document.querySelectorAll(".cursor__media");
-const navLinks = document.querySelectorAll(".hover_item");
+if (!isMobile) {
+  const cursor = document.querySelector(".cursor");
+  const cursorMedias = document.querySelectorAll(".cursor__media");
+  const navLinks = document.querySelectorAll(".hover_item");
 
-gsap.set(cursor, {
-  xPercent: -50,
-  yPercent: -50,
-  scale: 0,
-});
-
-const setCursorX = gsap.quickTo(cursor, "x", {
-  duration: 0.6,
-  ease: "expo",
-});
-
-const setCursorY = gsap.quickTo(cursor, "y", {
-  duration: 0.6,
-  ease: "expo",
-});
-const hover_wrapper = document.querySelector(".mouse-over");
-hover_wrapper.addEventListener("mousemove", (e) => {
-  setCursorX(e.x);
-  setCursorY(e.y);
-});
-
-const tl = gsap.timeline({
-  paused: true,
-});
-
-tl.to(cursor, {
-  scale: 1,
-  opacity: 1,
-  duration: 0.5,
-  ease: "expo.inOut",
-});
-
-navLinks.forEach((navLink, i) => {
-  navLink.addEventListener("mouseover", () => {
-    cursorMedias[i].classList.add("active");
-    tl.play();
+  gsap.set(cursor, {
+    xPercent: -50,
+    yPercent: -50,
+    scale: 0,
   });
-});
 
-navLinks.forEach((navLink, i) => {
-  navLink.addEventListener("mouseout", () => {
-    tl.reverse();
-    cursorMedias[i].classList.remove("active");
+  const setCursorX = gsap.quickTo(cursor, "x", {
+    duration: 0.6,
+    ease: "expo",
   });
-});
+
+  const setCursorY = gsap.quickTo(cursor, "y", {
+    duration: 0.6,
+    ease: "expo",
+  });
+  const hover_wrapper = document.querySelector(".mouse-over");
+  hover_wrapper.addEventListener("mousemove", (e) => {
+    setCursorX(e.x);
+    setCursorY(e.y);
+  });
+
+  const tl = gsap.timeline({
+    paused: true,
+  });
+
+  tl.to(cursor, {
+    scale: 1,
+    opacity: 1,
+    duration: 0.5,
+    ease: "expo.inOut",
+  });
+
+  navLinks.forEach((navLink, i) => {
+    navLink.addEventListener("mouseover", () => {
+      cursorMedias[i].classList.add("active");
+      tl.play();
+    });
+  });
+
+  navLinks.forEach((navLink, i) => {
+    navLink.addEventListener("mouseout", () => {
+      tl.reverse();
+      cursorMedias[i].classList.remove("active");
+    });
+  });
 }
