@@ -12,6 +12,26 @@
   margin: 0;
   padding: 0;
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+}
 :root {
   --text-primary: #ffffff;
   --text-secondary: #cf2526;
@@ -155,6 +175,11 @@ body.tt-transition .ptr-prel-content {
   display: inline-block;
 }
 .btn-main:hover {
+  background: var(--text-secondary);
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+.btn-main.invert{
   background: var(--text-secondary);
   color: var(--text-primary);
   border-color: var(--text-secondary);
@@ -303,12 +328,16 @@ body.tt-transition .ptr-prel-content {
   text-decoration: none;
   overflow: hidden;
 }
-.nav-items li a:hover:after,
+.overlay ul li a:hover,
+.overlay ul li a.active {
+  color: var(--text-secondary);
+}
+/* .nav-items li a:hover:after,
 .nav-items li a:focus:after,
 .nav-items li a:active:after {
   width: 100%;
-}
-.nav-items li a:after {
+} */
+/* .nav-items li a:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -317,7 +346,7 @@ body.tt-transition .ptr-prel-content {
   height: 1px;
   background: #fff;
   transition: 0.35s;
-}
+} */
 .overlay-menu .nav-title {
   font-size: 12px;
   margin-bottom: 15px;
@@ -367,7 +396,7 @@ body.tt-transition .ptr-prel-content {
 
 .form-wrapper {
   background: #100d0a;
-  width: 80%;
+  width: 600px;
   position: fixed;
   right: 0;
   top: 0;
@@ -411,7 +440,7 @@ body.tt-transition .ptr-prel-content {
   box-shadow: none;
 }
 .form-wrapper h3 {
-  font-size: clamp(20px, 5vw, 46px);
+  font-size: clamp(20px, 5vw, 40px);
   margin: 15px 0;
 }
 .title-red {
@@ -1726,6 +1755,9 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
   }
 }
 @media (max-width: 768px) {
+  .form-wrapper {
+    width: 100%;
+  }
   .hero {
     height: 80vh;
   }
@@ -1835,5 +1867,54 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
     -webkit-backdrop-filter: blur(4px);
     padding: 15px;
     border-radius: 10px;
+  }
+  .form-wrapper .form-group {
+    margin-bottom: 15px;
+  }
+  .form-wrapper .form-group input,
+  .form-wrapper .form-group textarea {
+    padding: 10px;
+  }
+}
+
+.marquee {
+  position: relative;
+  max-width: 100%;
+  height: 100px;
+  overflow: hidden;
+}
+.track.rtl {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee-rtl 20s linear infinite;
+}
+
+.track.ltr {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee-ltr 20s linear infinite;
+}
+.marquee .content {
+  font-weight: 100;
+  color: #ffffff4c;
+  font-size: clamp(40px, 10vw, 84px);
+}
+
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+@keyframes marquee-ltr {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
