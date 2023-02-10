@@ -179,7 +179,7 @@ body.tt-transition .ptr-prel-content {
   color: var(--text-primary);
   border-color: var(--text-secondary);
 }
-.btn-main.invert{
+.btn-main.invert {
   background: var(--text-secondary);
   color: var(--text-primary);
   border-color: var(--text-secondary);
@@ -900,6 +900,7 @@ ul.expertise-list-items {
 .swiper-wrapper {
   height: 600px;
 }
+.testimonial-swipper .swiper-wrapper,.expertise-swipper .swiper-wrapper{height: auto;}
 .cs-swiper img {
   width: 100%;
   height: 100%;
@@ -1279,8 +1280,6 @@ img.tt-psi-image {
   .tt-portfolio-slider-caption {
     margin-left: 10%;
   }
-}
-.tt-ps-caption-inner {
 }
 
 .tt-portfolio-slider-caption a {
@@ -1809,19 +1808,9 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
     left: unset;
   }
   .tt-ps-caption-inner {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    padding: 15px;
-    border-radius: 10px;
     text-align: center;
   }
   .hero h1 {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    padding: 15px;
-    border-radius: 10px;
     margin: 15px;
   }
   .what-we-do h2 {
@@ -1877,44 +1866,41 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
   }
 }
 
+
 .marquee {
   position: relative;
   max-width: 100%;
-  height: 100px;
-  overflow: hidden;
-}
-.track.rtl {
-  position: absolute;
-  white-space: nowrap;
-  will-change: transform;
-  animation: marquee-rtl 20s linear infinite;
-}
-
-.track.ltr {
-  position: absolute;
-  white-space: nowrap;
-  will-change: transform;
-  animation: marquee-ltr 20s linear infinite;
+  overflow-x: hidden;
 }
 .marquee .content {
   font-weight: 100;
   color: #ffffff4c;
   font-size: clamp(40px, 10vw, 84px);
 }
-
+.track {
+  white-space: nowrap;
+  will-change: transform;
+}
+.track.rtl {
+  animation: marquee-rtl 10s linear infinite;
+}
+.track.ltr {
+  animation: marquee-ltr 10s linear infinite;
+}
 @keyframes marquee-rtl {
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(50%);
+    transform: translateX(-50%);
   }
 }
+
 @keyframes marquee-ltr {
   from {
-    transform: translateX(0);
+    transform: translateX(-50%);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(0);
   }
 }
