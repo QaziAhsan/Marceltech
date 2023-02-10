@@ -1731,6 +1731,11 @@ body:not(.tt-magic-cursor) .tt-ps-nav-arrow:hover {
   font-size: 32px;
   margin-bottom: 15px;
   text-decoration: underline;
+  color: rgba(255, 255, 255, 0.808);
+}
+.benefits-bottom a:hover h3{
+  color: var(--text-secondary);
+
 }
 .benefits-bottom p {
   font-weight: 400;
